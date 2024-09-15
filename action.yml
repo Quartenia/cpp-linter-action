@@ -302,7 +302,7 @@ runs:
 
     - name: Setup python venv (Windows)
       if: runner.os == 'Windows'
-      shell: pwsh
+      shell: powershell
       run: |
         ${{ steps.setup-python.outputs.python-path }} -m venv "$env:GITHUB_ACTION_PATH/venv"
         Invoke-Expression -Command "$env:GITHUB_ACTION_PATH/venv/Scripts/Activate.ps1"
@@ -312,7 +312,7 @@ runs:
     - name: Run cpp-linter (Windows)
       id: cpp-linter-windows
       if: runner.os == 'Windows'
-      shell: pwsh
+      shell: powershell
       run: |
         Invoke-Expression -Command "$env:GITHUB_ACTION_PATH/venv/Scripts/Activate.ps1"
 
